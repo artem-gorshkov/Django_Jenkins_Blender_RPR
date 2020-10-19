@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <title>RPR</title>
+</head>
+<body>
+<h1 style="font-size: 24pt;">Render your blender scene</h1>
+<h2 style="font-size: 20pt;">Your image is ready</h2>
+<img width="1024" height="576" src="{% static "img/rendered.png" %}" style="margin: 3% auto"/>
+<br>
+<h2 style="font-size: 20pt;">Logfile</h2>
+<br>
+<p style="margin: auto auto auto 5%; font-family: monospace; font-size: 11pt; white-space: pre; text-align: left">{{ log }}</p>
+</body>
+</html>

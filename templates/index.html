@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <title>RPR</title>
+</head>
+<body>
+<h1 style="font-size: 24pt;">Render your blender scene</h1>
+<h2 style="font-size: 20pt;">Upload your scene and specify colour</h2>
+<form method="POST">
+    {% csrf_token %}
+    <table style="margin: 3% auto">
+        {{ form }}
+    </table>
+    <input type="submit" value="Send" style="margin: 3% auto; font-size: 30px;" onclick='upload.style.display = "block"; setTimeout(()=>{},1000)'>
+</form>
+<div class="windows8" id="upload">
+    <div class="wBall" id="wBall_1">
+        <div class="wInnerBall"></div>
+    </div>
+    <div class="wBall" id="wBall_2">
+        <div class="wInnerBall"></div>
+    </div>
+    <div class="wBall" id="wBall_3">
+        <div class="wInnerBall"></div>
+    </div>
+    <div class="wBall" id="wBall_4">
+        <div class="wInnerBall"></div>
+    </div>
+    <div class="wBall" id="wBall_5">
+        <div class="wInnerBall"></div>
+    </div>
+</div>
+<script>
+    upload = document.getElementById('upload')
+    upload.style.display = "none"
+</script>
+</body>
+</html>
